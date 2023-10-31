@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <ul>
+        {% for task in tasks%}
+           <li>{{ task }}</li>
+        {% endfor %}
+
+    </ul>
+
+    <form action="{% url 'task' %}" method="POST"> {% csrf_token %}
+        <input type="text" name="name" placeholder="digete seu nome">
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <p>{{ name }}</p>
+</body>
+</html>
